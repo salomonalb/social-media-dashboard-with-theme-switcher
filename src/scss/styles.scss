@@ -181,5 +181,9 @@ main {
     &__today {
         font-weight: 700;
         color: $Lime-Green;
+
+        &.--red {
+            color: $Bright-Red;
+        }
     }
 }
