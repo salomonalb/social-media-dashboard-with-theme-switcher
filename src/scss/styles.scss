@@ -16,6 +16,7 @@ html {
 body {
     font-family: $Family;
     color: $Very-Dark-Blue;
+    padding-bottom: 10rem;
 }
 
 .header {
@@ -106,27 +107,35 @@ main {
     max-width: 112rem;
     margin: auto;
 }
-.main-cards-container {
+
+%container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
     align-items: center;
     padding-inline: min(6.4vw, 16rem);
-    position: relative;
-    bottom: min(10.6vw, 8rem);
     @media screen and (min-width: 1250px) {
         padding-inline:0;
     }
 }
-.main-card {
-    padding-block: 3rem;
+%card {
+    padding: 3rem;
+    background-color: $Light-Grayish-Blue;
     flex-basis: 25.5rem;
     max-width: 32.5rem;
     flex-grow: 1;
-    //flex-shrink: 1;
-    background-color: $Light-Grayish-Blue;
     border-radius: 1rem;
+}
+
+.main-cards-container {
+    @extend %container;
+    position: relative;
+    bottom: min(10.6vw, 8rem);
+    
+}
+.main-card {
+    @extend %card;
     border-top: .5rem solid black;
     height: 23rem;
 
@@ -159,7 +168,7 @@ main {
     &__user {
         font-weight: 700;
         color: $Dark-Grayish-Blue;
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
     &__number {
         max-width: max-content;
@@ -181,9 +190,49 @@ main {
     &__today {
         font-weight: 700;
         color: $Lime-Green;
+    }
+}
 
-        &.--red {
-            color: $Bright-Red;
+.--red {
+    color: $Bright-Red;
+}
+
+.second-title {
+    color: $Dark-Grayish-Blue;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.grid {
+    @extend %container;
+
+    &-card {
+        @extend %card;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        &__row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &:nth-child(2) {
+                align-items: baseline;
+            }
+        }
+        &__title {
+            @extend .main-card__user
+        }
+        &__number {
+            font-weight: 700;
+            font-size: 3rem;
+        }
+        &__percentage {
+            @extend .main-card__today;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
         }
     }
 }
