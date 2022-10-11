@@ -112,11 +112,10 @@ main {
     justify-content: center;
     gap: 1.5rem;
     align-items: center;
-    padding-inline: 2.4rem;
+    padding-inline: min(6.4vw, 16rem);
     @media screen and (min-width: 1250px) {
         padding-inline:0;
     }
-    // make the padding behave like the header,
     // theres a problem with the height of the twitter card
     // change the color of the border for each card
 }
@@ -129,6 +128,24 @@ main {
     background-color: $Light-Grayish-Blue;
     border-radius: 1rem;
     border-top: .5rem solid black;
+    height: 23rem;
+
+    &.--face {
+        border-color: $Facebook;
+    }
+    &.--twit {
+        border-color: $Twitter;
+    }
+    &.--ytb {
+        border-color: $YouTube;
+    }
+    &.--insta {
+        border: none;
+        background: linear-gradient(hsl(227, 47%, 96%), hsl(227, 47%, 96%)) padding-box,
+                    linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%)) border-box;
+                    border-radius: 1em;
+                    border-top: .5rem solid transparent;
+    }
 
     &__row {
         display: flex;
