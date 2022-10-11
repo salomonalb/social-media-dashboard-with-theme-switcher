@@ -20,9 +20,11 @@ body {
 
 .header {
     padding-top: 4rem;
-    padding-bottom: 8rem;
+    padding-bottom: min(21.3vw, 16rem);
     padding-inline: min(6.4vw, 16rem);
     background-color: $Very-Pale-Blue;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
 
     &__container {
         display: flex;
