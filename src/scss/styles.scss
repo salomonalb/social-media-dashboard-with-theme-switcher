@@ -22,9 +22,19 @@ body {
     padding-top: 4rem;
     padding-bottom: 8rem;
     padding-inline: min(6.4vw, 16rem);
-    display: flex;
-    flex-direction: column;
     background-color: $Very-Pale-Blue;
+
+    &__container {
+        display: flex;
+    flex-direction: column;
+    max-width: 101rem;
+    margin: auto;
+    @media screen and (min-width: 600px ) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    }
 
     &__column {
         display: flex;
@@ -32,24 +42,33 @@ body {
         gap: 1rem;
         padding-bottom: 1.5rem;
         border-bottom: .1rem solid $Dark-Grayish-Blue;
+        @media screen and (min-width: 600px) {
+            border: none;
+        }
     }
     &__title {
-        font-size: 2.4rem;
+        font-size: min(6.4vw, 2.8rem) ;//2.4rem;
         width: max-content;
-
     }
     &__subtitle {
-        font-size: 1.4rem;
+        font-size: min(3.73vw, 1.4rem);
         color: $Dark-Grayish-Blue;
         font-weight: 700;
+        width: max-content;
     }
     &__row {
         display: flex;
         justify-content: space-between;
         margin-top: 1.5rem;
+        align-items: center;
+        @media screen and (min-width: 600px) {
+            gap: 1rem;
+        }
     }
     &__toggle-container {
         position: relative;
+        display: flex;
+        align-items: center;
     }
     &__toggle {
         appearance: none;
