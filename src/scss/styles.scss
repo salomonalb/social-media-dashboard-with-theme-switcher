@@ -29,7 +29,7 @@ body {
     &__container {
         display: flex;
     flex-direction: column;
-    max-width: 101rem;
+    max-width: 112rem;
     margin: auto;
     @media screen and (min-width: 600px ) {
         flex-direction: row;
@@ -99,5 +99,70 @@ body {
             left: .4rem;
             background-color: $Very-Dark-Blue;
         }
+    }
+}
+
+main {
+    max-width: 112rem;
+    margin: auto;
+}
+.main-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    align-items: center;
+    padding-inline: 2.4rem;
+    @media screen and (min-width: 1250px) {
+        padding-inline:0;
+    }
+    // make the padding behave like the header,
+    // theres a problem with the height of the twitter card
+    // change the color of the border for each card
+}
+.main-card {
+    padding-block: 3rem;
+    flex-basis: 25.5rem;
+    max-width: 32.5rem;
+    flex-grow: 1;
+    //flex-shrink: 1;
+    background-color: $Light-Grayish-Blue;
+    border-radius: 1rem;
+    border-top: .5rem solid black;
+
+    &__row {
+        display: flex;
+        margin: auto;
+        width: max-content;
+        align-items: center;
+    }
+    &__icon {
+        margin-right: 1rem;
+    }
+    &__user {
+        font-weight: 700;
+        color: $Dark-Grayish-Blue;
+        font-size: 1.3rem;
+    }
+    &__number {
+        max-width: max-content;
+        font-weight: 700;
+        font-size: 5rem;
+        margin: auto;
+        margin-top: 3rem;
+    }
+    &__followers {
+        max-width: max-content;
+        margin: auto;
+        letter-spacing: .5rem;
+        text-transform: uppercase;
+        margin-bottom: 3rem;
+    }
+    &__arrow {
+        margin-right: .5rem;
+    }
+    &__today {
+        font-weight: 700;
+        color: $Lime-Green;
     }
 }
