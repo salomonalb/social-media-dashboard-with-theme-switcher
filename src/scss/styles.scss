@@ -113,11 +113,11 @@ main {
     gap: 1.5rem;
     align-items: center;
     padding-inline: min(6.4vw, 16rem);
+    position: relative;
+    bottom: min(10.6vw, 8rem);
     @media screen and (min-width: 1250px) {
         padding-inline:0;
     }
-    // theres a problem with the height of the twitter card
-    // change the color of the border for each card
 }
 .main-card {
     padding-block: 3rem;
