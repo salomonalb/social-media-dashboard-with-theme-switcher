@@ -15,28 +15,29 @@ html {
 
 body {
     font-family: $Family;
-    color: $Very-Dark-Blue;
+    color: var(--heavy-text);
     padding-bottom: 10rem;
+    background-color: var(--background);
 }
 
 .header {
     padding-top: 4rem;
     padding-bottom: min(21.3vw, 16rem);
     padding-inline: min(6.4vw, 16rem);
-    background-color: $Very-Pale-Blue;
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
+    background-color: var(--bg-pattern); 
 
     &__container {
         display: flex;
-    flex-direction: column;
-    max-width: 112rem;
-    margin: auto;
-    @media screen and (min-width: 600px ) {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
+        flex-direction: column;
+        max-width: 112rem;
+        margin: auto;
+        @media screen and (min-width: 600px ) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
     }
 
     &__column {
@@ -44,7 +45,7 @@ body {
         flex-direction: column;
         gap: 1rem;
         padding-bottom: 1.5rem;
-        border-bottom: .1rem solid $Dark-Grayish-Blue;
+        border-bottom: .1rem solid var(--light-text);
         @media screen and (min-width: 600px) {
             border: none;
         }
@@ -55,7 +56,7 @@ body {
     }
     &__subtitle {
         font-size: min(3.73vw, 1.4rem);
-        color: $Dark-Grayish-Blue;
+        color: var(--light-text);
         font-weight: 700;
         width: max-content;
     }
@@ -80,6 +81,7 @@ body {
         background-color: $Toggle;
         border-radius: 100vw;
         transition: all 300ms;
+        cursor: pointer;
     }
 
     &__toggle-ball {
@@ -92,13 +94,14 @@ body {
         border-radius: 50%;
         z-index: 20;
         transition: all 300ms;
+        cursor: pointer;
     }
     &__toggle:checked {
         background-image: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
 
         &+.header__toggle-ball {
             left: .4rem;
-            background-color: $Very-Dark-Blue;
+            background-color: var(--background);
         }
     }
 }
@@ -121,7 +124,7 @@ main {
 }
 %card {
     padding: 3rem;
-    background-color: $Light-Grayish-Blue;
+    background-color: var(--card-bg);
     flex-basis: 25.5rem;
     max-width: 32.5rem;
     flex-grow: 1;
@@ -150,7 +153,7 @@ main {
     }
     &.--insta {
         border: none;
-        background: linear-gradient(hsl(227, 47%, 96%), hsl(227, 47%, 96%)) padding-box,
+        background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
                     linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%)) border-box;
                     border-radius: 1em;
                     border-top: .5rem solid transparent;
@@ -167,7 +170,7 @@ main {
     }
     &__user {
         font-weight: 700;
-        color: $Dark-Grayish-Blue;
+        color: var(--light-text);
         font-size: 1.4rem;
     }
     &__number {
@@ -198,7 +201,7 @@ main {
 }
 
 .second-title {
-    color: $Dark-Grayish-Blue;
+    color: var(--heavy-text);
     font-weight: 700;
     font-size: 2.5rem;
     padding-inline: min(6.4vw, 16rem);
